@@ -32,5 +32,6 @@ mc(){
         echo "  help - Show this message."
         echo "  install - Install a Minecraft Server Version"
         echo "  start - Start a Minecraft Sevrer"
+        echo "  script - Create a startup script
     fi
 }
