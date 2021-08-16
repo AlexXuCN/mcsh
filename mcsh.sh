@@ -24,6 +24,9 @@ else
     echo 'Use `mc help` for help'
 fi
 
+if 
+
+
 mc(){
     if [ $1 == "help" ]
     then
@@ -31,7 +34,10 @@ mc(){
         echo "Avaliable arguments:"
         echo "  help - Show this message."
         echo "  install - Install a Minecraft Server Version"
+        echo "  list - List all available packages to install"
         echo "  start - Start a Minecraft Sevrer"
-        echo "  script - Create a startup script
+        echo "  script - Create a startup script"
+        echo "  config - Change or view the config"
+    elsi [ $1 == "install ]
     fi
 }
