@@ -24,7 +24,32 @@ else
     echo 'Use `mc help` for help'
 fi
 
-if 
+# config
+
+makemcshconfig(){
+    touch ~/.mc/config/mcsh.config
+    echo -e "# mcsh config \npackagemirror=https://cdn.jsdelivr.net/gh/AlexXuCN/mcsh-packages/\nmclocation=null"  > ~/.mc/config/mcsh.config
+}
+
+if test -d ~/.mc/config
+then
+    if test -f ~/.mc/config/mcsh.config
+    then
+        source ~/.mc/config/mcsh.config
+    else
+        makemcshconfig
+        source ~/.mc/config/mcsh.config
+    fi
+elif test -d ~/.mc
+then
+    mkdir ~/.mc/config
+    makemcshconfig
+    source ~/.mc/config/mcsh.config
+else
+    mkdir ~/.mc/config
+    makemcshconfig
+    source ~/.mc/config/mcsh.config
+fi
 
 
 mc(){
@@ -38,6 +63,9 @@ mc(){
         echo "  start - Start a Minecraft Sevrer"
         echo "  script - Create a startup script"
         echo "  config - Change or view the config"
-    elsi [ $1 == "install ]
+        echo "  update - Update package database
+    elif [ $1 == "update" ]
+    then
+
     fi
 }
